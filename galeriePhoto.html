@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Ma galerie photo</title>
+<style>
+/* Style de la page */
+body {
+background-color: #f0f0f0;
+margin: 0;
+padding: 0;
+}
+
+/* Style du conteneur SVG */
+#svg-container {
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Style du SVG */
+svg {
+width: 80%;
+height: 80%;
+border: 5px solid black;
+box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Style de la galerie photo */
+#gallery {
+width: 90%;
+height: 90%;
+}
+
+/* Style des pages de la galerie photo */
+#gallery .page {
+width: 50%;
+height: 100%;
+background-color: white;
+overflow: hidden;
+}
+
+/* Style des images de la galerie photo */
+#gallery .page img {
+width: 100%;
+height: auto;
+}
+
+/* Style des textes de la galerie photo */
+#gallery .page p {
+font-family: Arial, sans-serif;
+font-size: 16px;
+text-align: center;
+margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<!-- Conteneur du SVG -->
+<!-- <div id="svg-container">-->
+<!-- SVG -->
+<!-- <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">-->
+ <!-- Galerie photo -->
+<foreignObject x="40" y="30" width="720" height="540">
+<div id="gallery">
+<!-- Première page -->
+<div class="page">
+<img src="bateau.jpg" alt="Bateau de pêche breton">
+<p>le chat mode de Microsoft Bing search</p>
+</div>
+<!-- Deuxième page -->
+<div class="page">
+<img src="paysage.jpg" alt="Paysage en Bretagne">
+<p>le chat mode de Microsoft Bing search</p>
+</div>
+<!-- Troisième page -->
+<div class="page">
+<img src="phare.jpg" alt="Phare en Bretagne">
+<p>le chat mode de Microsoft Bing search</p>
+</div>
+<!-- Quatrième page -->
+<div class="page">
+<img src="menhir.jpg" alt="Menhir en Bretagne">
+<p>le chat mode de Microsoft Bing search</p>
+</div>
+</div>
+</foreignObject>
+<!-- </svg>-->
+<!-- </div>-->
+
+<!-- Script pour charger la bibliothèque Turn.js -->
+<script src="/turn.js/4/turn.min.js"></script>
+
+<!-- Script pour créer l'effet de page tournante -->
+<script>
+// Attendre que le document soit chargé
+document.addEventListener("DOMContentLoaded", function() {
+// Sélectionner la galerie photo
+var gallery = document.getElementById("gallery");
+
+// Appliquer l'effet de page tournante
+gallery.turn({
+// Nombre de pages
+pages: 4,
+// Durée de l'animation
+duration: 1000,
+// Mode d'affichage
+display: "double",
+// Sensibilité du toucher
+swipeSensitivity: 50,
+// Autoriser le redimensionnement automatique
+autoCenter: true
+});
+
+});
